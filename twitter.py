@@ -1,7 +1,7 @@
 
 from utils import removeTag, transformTimestamp, InitSoup, hasImage
-
-getId = 'ev'
+import json
+getId = 'youyuxi'
 
 body = InitSoup(getId)
 
@@ -32,8 +32,9 @@ def getUserTwitter(body):
                 twitters.append({
                     'context': removeTag((twitter)),
                     'images': hasImage(images),
-                    'timer': transformTimestamp(timer['data-time'])
+                    'timer': transformTimestamp(timer['data-time']),
+                    'source': "twitter"
                 })
-    return twitters
+    return json.dumps(twitters)
 
 print(getUserTwitter(body))

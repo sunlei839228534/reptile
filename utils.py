@@ -2,7 +2,6 @@ import re
 import requests
 from bs4 import BeautifulSoup
 import time
-
 # 去除content内的tag标签
 
 def removeTag(content):
